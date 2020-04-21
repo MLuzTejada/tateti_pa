@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Tateti</title>
+    <meta charset="UTF-8">
+    <script src="tateti.js"></script>
+
+    <style>
+        /*tablero*/
+        
+        #celda1,
+        #celda2,
+        #celda3,
+        #celda4,
+        #celda5,
+        #celda6,
+        #celda7,
+        #celda8,
+        #celda9 {
+            background-color: lightsteelblue;
+            width: 120px;
+            height: 120px;
+            cursor: pointer;
+            margin: 10px;
+        }
+        
+        #tablero {
+            margin-left: 120px;
+        }
+        
+        h1 {
+            text-align: center;
+            text-shadow: 2px 2px 5px darkred;
+        }
+        
+        label,
+        input {
+            margin-left: 150px;
+        }
+        
+        div {
+            float: right;
+            height: 560px;
+            width: 700px;
+        }
+        
+        #historial {
+            margin-right: 350px;
+            text-align: end;
+            font-size: large;
+        }
+        
+        #ganador {
+            color: red;
+            margin-right: 350px;
+            text-align: end;
+            font-size: larger;
+        }
+        /*botones */
+        
+        #comenzar,
+        #reiniciar {
+            background-color: lightgray;
+            color: black;
+            padding: 14px 20px;
+            text-align: center;
+            font-size: 14px;
+            opacity: 0.6;
+            transition: 0.3s;
+            display: inline-block;
+            border-style: outset;
+            border-radius: 5px;
+            margin-left: 10px;
+            /* lo que pasa cuando pongo el mouse sobre el boton*/
+            cursor: pointer;
+        }
+        
+        #comenzar:hover {
+            opacity: 5;
+        }
+        
+        #reiniciar:hover {
+            opacity: 5;
+        }
+    </style>
+
+    <script>
+    </script>
+
+</head>
+
+<body>
+
+    <h1>Ta Te Ti</h1>
+
+    <div>
+        <p id="historial"></p>
+
+        <p id="ganador"></p>
+    </div>
+
+    <form id="completar jugadores">
+        <label id="labeljugador1" for="fnamejugador1">Nombre Jugador 1:</label><br>
+        <input type="text" id="fnamejugador1" name="fnamejugador1" required>
+        <input type="button" id="comenzar" onclick="comenzarjuego()" value="Comenzar Juego">
+        <br><label id="labeljugador2" for="fnamejugador2">Nombre Jugador 2:</label><br>
+        <input type="text" id="fnamejugador2" name="fnamejugador2" required>
+        <input type="reset" id="reiniciar" value="Reiniciar Juego" onclick="reiniciarjuego()">
+    </form>
+
+    <br>
+    <form id="tablero">
+        <input type="button" id="celda1" value="">
+        <input type="button" id="celda2" value="">
+        <input type="button" id="celda3" value=""><br>
+        <input type="button" id="celda4" value="">
+        <input type="button" id="celda5" value="">
+        <input type="button" id="celda6" value=""><br>
+        <input type="button" id="celda7" value="">
+        <input type="button" id="celda8" value="">
+        <input type="button" id="celda9" value="">
+    </form>
+
+</body>
+
+</html>
