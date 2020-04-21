@@ -56,7 +56,7 @@ function ponerficha(evt) {
     mostrarganador();
 
     if (jugadas == 0) {
-        //desabilita el tablero cuando hay empate
+        //deshabilita el tablero cuando hay empate
         for (var t = 1; t <= 9; t++) {
             document.getElementById('celda' + t).disabled = true;
         }
@@ -74,123 +74,31 @@ function mostrarganador() {
 
 
     /* combinaciones de X para ganar*/
-    if (celdas[1] == "X" && celdas[2] == "X" && celdas[3] == "X") {
+    if ((celdas[1] == "X" && celdas[2] == "X" && celdas[3] == "X") || (celdas[4] == "X" && celdas[5] == "X" && celdas[6] == "X") ||
+        celdas[7] == "X" && celdas[8] == "X" && celdas[9] == "X" || celdas[1] == "X" && celdas[4] == "X" && celdas[7] == "X" ||
+        celdas[2] == "X" && celdas[5] == "X" && celdas[8] == "X" || celdas[3] == "X" && celdas[6] == "X" && celdas[9] == "X" ||
+        celdas[1] == "X" && celdas[5] == "X" && celdas[9] == "X" || celdas[3] == "X" && celdas[5] == "X" && celdas[7] == "X") {
         //deshabilita el tablero si alguien gana
         for (j; j <= 9; j++) {
             document.getElementById('celda' + j).disabled = true;
         }
         document.getElementById("ganador").innerText = ("El ganador es: " + jugador1 + " con X");
+        return;
 
-    }
-    if (celdas[4] == "X" && celdas[5] == "X" && celdas[6] == "X") {
-
-        for (j; j <= 9; j++) {
-            document.getElementById('celda' + j).disabled = true;
-        }
-
-        document.getElementById("ganador").innerText = ("El ganador es: " + jugador1 + " con X");
-    }
-    if (celdas[7] == "X" && celdas[8] == "X" && celdas[9] == "X") {
-        for (j; j <= 9; j++) {
-            document.getElementById('celda' + j).disabled = true;
-        }
-        document.getElementById("ganador").innerText = ("El ganador es:" + jugador1 + " con X");
-    }
-    if (celdas[1] == "X" && celdas[4] == "X" && celdas[7] == "X") {
-
-        for (j; j <= 9; j++) {
-            document.getElementById('celda' + j).disabled = true;
-        }
-        document.getElementById("ganador").innerText = ("El ganador es:" + jugador1 + " con X");
-    }
-    if (celdas[2] == "X" && celdas[5] == "X" && celdas[8] == "X") {
-
-        for (j; j <= 9; j++) {
-            document.getElementById('celda' + j).disabled = true;
-        }
-        document.getElementById("ganador").innerText = ("El ganador es:" + jugador1 + " con X");
-    }
-    if (celdas[3] == "X" && celdas[6] == "X" && celdas[9] == "X") {
-
-        for (j; j <= 9; j++) {
-            document.getElementById('celda' + j).disabled = true;
-        }
-        document.getElementById("ganador").innerText = ("El ganador es:" + jugador1 + " con X");
-    }
-    if (celdas[1] == "X" && celdas[5] == "X" && celdas[9] == "X") {
-
-        for (j; j <= 9; j++) {
-            document.getElementById('celda' + j).disabled = true;
-        }
-        document.getElementById("ganador").innerText = ("El ganador es:" + jugador1 + " con X");
-    }
-    if (celdas[3] == "X" && celdas[5] == "X" && celdas[7] == "X") {
-
-        for (j; j <= 9; j++) {
-            document.getElementById('celda' + j).disabled = true;
-        }
-        document.getElementById("ganador").innerText = ("El ganador es:" + jugador1 + " con X");
     }
 
     /*combinaciones de O para ganar*/
-    if (celdas[1] == "O" && celdas[2] == "O" && celdas[3] == "O") {
+    if (celdas[1] == "O" && celdas[2] == "O" && celdas[3] == "O" || celdas[4] == "O" && celdas[5] == "O" && celdas[6] == "O" ||
+        celdas[7] == "O" && celdas[8] == "O" && celdas[9] == "O" || celdas[1] == "O" && celdas[4] == "O" && celdas[7] == "O" ||
+        celdas[2] == "O" && celdas[5] == "O" && celdas[8] == "O" || celdas[3] == "O" && celdas[6] == "O" && celdas[9] == "O" ||
+        celdas[1] == "O" && celdas[5] == "O" && celdas[9] == "O" || celdas[3] == "O" && celdas[5] == "O" && celdas[7] == "O") {
 
         for (j; j <= 9; j++) {
             document.getElementById('celda' + j).disabled = true;
         }
         document.getElementById("ganador").innerText = ("El ganador es:" + jugador2 + " con O");
+        return;
     }
-    if (celdas[4] == "O" && celdas[5] == "O" && celdas[6] == "O") {
-
-        for (j; j <= 9; j++) {
-            document.getElementById('celda' + j).disabled = true;
-        }
-        document.getElementById("ganador").innerText = ("El ganador es:" + jugador2 + " con O");
-    }
-    if (celdas[7] == "O" && celdas[8] == "O" && celdas[9] == "O") {
-
-        for (j; j <= 9; j++) {
-            document.getElementById('celda' + j).disabled = true;
-        }
-        document.getElementById("ganador").innerText = ("El ganador es:" + jugador2 + " con O");
-    }
-    if (celdas[1] == "O" && celdas[4] == "O" && celdas[7] == "O") {
-
-        for (j; j <= 9; j++) {
-            document.getElementById('celda' + j).disabled = true;
-        }
-        document.getElementById("ganador").innerText = ("El ganador es:" + jugador2 + " con O");
-    }
-    if (celdas[2] == "O" && celdas[5] == "O" && celdas[8] == "O") {
-
-        for (j; j <= 9; j++) {
-            document.getElementById('celda' + j).disabled = true;
-        }
-        document.getElementById("ganador").innerText = ("El ganador es:" + jugador2 + " con O");
-    }
-    if (celdas[3] == "O" && celdas[6] == "O" && celdas[9] == "O") {
-
-        for (j; j <= 9; j++) {
-            document.getElementById('celda' + j).disabled = true;
-        }
-        document.getElementById("ganador").innerText = ("El ganador es:" + jugador2 + " con O");
-    }
-    if (celdas[1] == "O" && celdas[5] == "O" && celdas[9] == "O") {
-
-        for (j; j <= 9; j++) {
-            document.getElementById('celda' + j).disabled = true;
-        }
-        document.getElementById("ganador").innerText = ("El ganador es:" + jugador2 + " con O");
-    }
-    if (celdas[3] == "O" && celdas[5] == "O" && celdas[7] == "O") {
-
-        for (j; j <= 9; j++) {
-            document.getElementById('celda' + j).disabled = true;
-        }
-        document.getElementById("ganador").innerText = ("El ganador es:" + jugador2 + " con O");
-
-    }
-
 }
 
 function reiniciarjuego() {
@@ -209,5 +117,4 @@ function reiniciarjuego() {
 
 /*  problemas:
 deja poner otra ficha aunque haya una escrita
-cuando pongo una ficha se mueve todo el tablero
 */
