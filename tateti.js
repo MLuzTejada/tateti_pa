@@ -1,5 +1,5 @@
 var jugadas; //indica los movimientos dentro del tablero, si es =0 nadie gano.
-var turno = "X"; //nos indica de quien es el turno para colocar X o O. El primer jugador siempre empieza con "X"
+var turno; //nos indica de quien es el turno para colocar X o O. El primer jugador siempre empieza con "X"
 
 //lo obtenemos del input del formulario, para mostrar a que jugador le toca.
 var jugador1;
@@ -10,6 +10,7 @@ var celdas = [];
 function comenzarjuego() {
 
     jugadas = 9;
+    turno = "X";
 
     jugador1 = document.getElementById("fnamejugador1").value;
     jugador2 = document.getElementById("fnamejugador2").value;
@@ -33,6 +34,8 @@ function comenzarjuego() {
 function ponerficha(evt) {
 
     evt.target.value = turno;
+    //deshabilita la celda para que no se pueda poner otra ficha donde ya se hizo click
+    evt.target.disabled = true;
 
     if (turno == "X") {
         turno = "O";
@@ -56,10 +59,6 @@ function ponerficha(evt) {
     mostrarganador();
 
     if (jugadas == 0) {
-        //deshabilita el tablero cuando hay empate
-        for (var t = 1; t <= 9; t++) {
-            document.getElementById('celda' + t).disabled = true;
-        }
 
         document.getElementById("ganador").innerText = ("Es un empate");
 
@@ -106,15 +105,11 @@ function reiniciarjuego() {
     document.getElementById("ganador").innerText = " ";
     document.getElementById("fnamejugador1").value = " ";
     document.getElementById("fnamejugador2").value = " ";
-    jugadas = 9;
+    turno.value = " ";
+
 
     for (var k = 1; k <= 9; k++) {
         document.getElementById('celda' + k).value = " ";
         document.getElementById('celda' + k).disabled = true;
     }
 }
-
-
-/*  problemas:
-deja poner otra ficha aunque haya una escrita
-*/
